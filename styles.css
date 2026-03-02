@@ -105,18 +105,22 @@ body {
 
 h1 {
     color:var(--blue);
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-h2 {
     font-size: 2rem;
     font-weight: bold;
 }
 
-h3 {
-    font-size: 1.5rem;
+h2 {
+    font-size: 1.8rem;
     font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 
@@ -133,7 +137,7 @@ h3 {
 
 header {
     background-color: var(--black);
-    padding: 2rem 1rem;
+    padding: 1.2rem;
     display: flex;
     align-items: center;
     color: var(--blue);
@@ -149,15 +153,67 @@ header {
 }
 
 .logo img {
-    width: 75px;
+    width: 60px;
     height: auto;
 }  
 
 nav h2 {
     display: none;
-    padding: 1rem;
-
 }
+
+#nav-toggle {
+    display: none;
+}
+
+nav label span {
+    background: var(--white);
+    display: block;
+    height: 3px;
+    width: 28px;
+    position: absolute;
+}
+
+nav label span::before,
+nav label span::after {
+    content: "";
+    background: var(--white);
+    height: 3px;
+    width: 28px;
+    position: absolute;
+    left: 0;
+}
+
+nav label span::before { top: -8px; }
+nav label span::after { top: 8px; }
+
+nav ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+#nav-toggle:checked ~ ul {
+    max-height: 300px;
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all .3s ease-in;
+}
+
+nav a:hover {
+    color: var(--black);
+    Background-color: var(--blue);
+}
+
+
+
 
 
 
@@ -170,6 +226,10 @@ nav h2 {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+}
+
+#hero h2 {
+    font-size: 2.2rem;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
